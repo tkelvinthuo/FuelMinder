@@ -1,5 +1,9 @@
 # Fuel Minder
-- The Fuel Minder is a program meant on helping travellers calculate the amount of fuel needed for the whole journey.
+- Fuel Minder is a program meant on helping travellers calculate the amount of fuel needed for the whole journey.
+
+## Features
+- Simple and ease-to-use command-line interface
+- Calculates the fuel need depending on the type and distance to be travelled.
 
 ## Importance
 - The Fuel Minder has several advantages:
@@ -14,4 +18,10 @@
 - The backend has functions to clean up the input from the user, also a function to save the calculate fuel amount.
 - A file will be the storage system for this program.
 
-/* Kelvin */
+## Pre-requisities
+
+- One needs to ensure that they have the following programs pre-installed:
+1. C Compiler
+2. Git
+
+** Kelvin **
