@@ -17,8 +17,9 @@ int main(void)
 	printf("\t\t\t\t\t	---------------------\n\n");
 	printf("This is a simple command-line program to help you calculate the amount of fuel required to complete a journey in terms of litres and the amount of money required.\n\n\n");
 	printf("First of all, we require a few details!\n\n");
-	printf("Which vehicle will you be using to travel?\n a) Truck\n b) SUV\n c) Saloon\n\n");
+	getStr("Which vehicle will you be using to travel?\n a) Truck\n b) SUV\n c) Saloon\n\n", vehicleType, 30);
 	/* getString */
+	printf("%s", vehicleType);
 	printf("Which type of fuel does the vehicle use?\n a? Petrol\n b) Diesel\n\n");
 	/* getString */
 	printf("What distance do you expect to cover for the whole journey in km?\n\n");
