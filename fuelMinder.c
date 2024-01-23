@@ -2,13 +2,13 @@
 
 #define PETROL 207
 #define DIESEL 197
-#define COMPACT_DIESEL 20
-#define COMPACT_PETROL 15
-#define MIDSIZE_DIESEL 18
-#define MIDSIZE_PETROL 12
-#define TRUCK_DIESEL 11
-#define TRUCK_PETROL 6
-#define MOTORCYCLES 20
+#define COMPACT_DIESEL 25
+#define COMPACT_PETROL 20
+#define MIDSIZE_DIESEL 20
+#define MIDSIZE_PETROL 15
+#define TRUCK_DIESEL 10
+#define TRUCK_PETROL 5
+#define MOTORCYCLES 40
 /**
  * main - Calculates the fuel required to a complete a journey
  * Return: 0(success)
@@ -27,17 +27,13 @@ int main(void)
 
 	/* pointer declaration */
 
-	printf("\t\t\t\t\t	WELCOME TO FUELMINDER \t\t\n");
-	printf("\t\t\t\t\t	---------------------\n\n");
+	printf("\t\t\t\t\t\t\t			WELCOME TO FUELMINDER		 \t\t\n");
+	printf("\t\t\t\t\t\t\t			---------------------		 \n\n");
 	printf("This is a simple command-line program to help you calculate the amount of fuel required to complete a journey in terms of litres and the amount of money required.\n\n\n");
 	printf("First of all, we require a few details!\n\n");
-	getStr("Which vehicle will you be using to travel?\n a) Compact \n b) Midsize \n c) Truck \n d) Motorcycles\n\n", vehicleType, 30);
-	printf("%s\n", vehicleType);
+	getStr("Which vehicle will you be using to travel?\n a) Compact (e.g Toyota Vitz, Nissan Note) \n b) Midsize (e.g Toyota Wish, Toyota Noah, Mark X) \n c) Truck (e.g Isuzu Canters \n d) Motorcycles\n\n", vehicleType, 30);
 	getStr("Which type of fuel does the vehicle use?\n a? Petrol\n b) Diesel\n\n", fuelType, 30);
-	printf("%s\n", fuelType);
-	getFlt("What distance do you expect to cover for the whole journey in km?\n\n", &distance);
-	printf("%f\n", distance);
-	/* function to calculate the amount of fuel */
+	getFlt("What distance do you expect to cover for the whole journey in km?", &distance);
 
 	/* Initialize avgConsumption and fuel price variables with values */
 	if (strcmp(vehicleType, "compact") == 0)
@@ -48,7 +44,7 @@ int main(void)
 			avgConsumption = COMPACT_DIESEL;
 			fuelAmount = distance / avgConsumption;
 			fuelCost = fuelAmount * fuelPrice;
-			printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+			printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 		}
 		else
 		{
@@ -56,7 +52,7 @@ int main(void)
 			avgConsumption = COMPACT_PETROL;
 			fuelAmount = distance / avgConsumption;
 			fuelCost = fuelAmount * fuelPrice;
-			printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+			printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 
 			/* fuel calculator function */
 		}
@@ -69,7 +65,7 @@ int main(void)
 			avgConsumption = MIDSIZE_DIESEL;
 			fuelAmount = distance / avgConsumption;
 			fuelCost = fuelAmount * fuelPrice;
-			printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+			printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 		}
 		else
 		{
@@ -77,7 +73,7 @@ int main(void)
 			avgConsumption = MIDSIZE_PETROL;
 			fuelAmount = distance / avgConsumption;
 			fuelCost = fuelAmount * fuelPrice;
-			printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+			printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 		}
 	}
 	else if (strcmp(vehicleType, "truck") == 0)
@@ -88,7 +84,7 @@ int main(void)
 			avgConsumption = TRUCK_DIESEL;
 			fuelAmount = distance / avgConsumption;
 			fuelCost = fuelAmount * fuelPrice;
-			printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+			printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 		}
 		else
 		{
@@ -96,7 +92,7 @@ int main(void)
 			avgConsumption = TRUCK_PETROL;
 			fuelAmount = distance / avgConsumption;
 			fuelCost = fuelAmount * fuelPrice;
-			printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+			printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 		}
 	}
 	else
@@ -105,8 +101,9 @@ int main(void)
 		avgConsumption = MOTORCYCLES;
 		fuelAmount = distance / avgConsumption;
 		fuelCost = fuelAmount * fuelPrice;
-		printf("To travel %lf with %s, you will need %lf litres of fuel and it will cost you %lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
+		printf("To travel %.2lf with %s, you will need %.2lf litres of fuel and it will cost you %.2lf Ksh.\n", distance, vehicleType, fuelAmount, fuelCost);
 	}
+	printf("fuelPrice %.2lf\n", fuelPrice);
 
 
 	return (0);
